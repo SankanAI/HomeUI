@@ -9,7 +9,6 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { RainbowButton } from "@/components/ui/rainbow-button";
 
 export const HeroParallax = ({
   products,
@@ -111,7 +110,9 @@ export const Header = () => {
       <p className="text-right max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
       Redefining how students master life skills. With gamified, interactive web apps, we transform learning Communication, Critical Thinking, Coding, and Finance into an experience that’s as fun as it is transformative. Learning, reimagined.
       </p>
-      <RainbowButton className="mt-5">Join Waitlist</RainbowButton>
+      <button className="ml-[10vh] mt-5 px-8 py-2 rounded-full bg-gradient-to-b from-blue-500 to-blue-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200">
+        Join Waitlist
+      </button>
     </div>
   );
 };
