@@ -8,8 +8,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // Disable default image optimization
   },
-  assetPrefix: isProd ? '/HomeUI/' : '',
-  basePath: isProd ? '/HomeUI' : '',+
+  assetPrefix: process.env.NODE_ENV=='production' ? '/HomeUI/' : '',
+  basePath: process.env.NODE_ENV=='production' ? '/HomeUI' : '',
 };
 
 export default nextConfig;
