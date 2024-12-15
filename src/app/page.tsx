@@ -1,5 +1,5 @@
 
-import HeroParallaxDemo from "@/app/Frontend/Move.tsx"
+import HeroParallaxDemo from "@/app/Frontend/Move"
 export default function Home() {
   return (
   <HeroParallaxDemo/>
