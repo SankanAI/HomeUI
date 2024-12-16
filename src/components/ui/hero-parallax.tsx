@@ -57,7 +57,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[300vh] py-30 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[300vh] py-120 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -103,14 +103,14 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mt-10 mx-auto py-20 md:py-20 lg:py-5 px-4 w-full  left-0 top-0">
-      <h1 className="text-center tracking-tighter text-7xl md:text-9xl lg:text-9xl text-white text">
+    <div className="max-w-7xl relative mt-10 mx-auto py-40 md:py-20 lg:py-30 px-4 w-full  left-0 top-0">
+      <h1 className="tracking-tighter text-7xl md:text-9xl lg:text-9xl text-white text">
         Sankan AI
       </h1>
-      <p className="text-right max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
+      <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
       Redefining how students master life skills. With gamified, interactive web apps, we transform learning Communication, Critical Thinking, Coding, and Finance into an experience that’s as fun as it is transformative. Learning, reimagined.
       </p>
-      <button className="ml-[10vh] mt-5 px-8 py-2 rounded-full bg-gradient-to-b from-blue-500 to-blue-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200">
+      <button className="mt-5 px-8 py-2 rounded-full bg-gradient-to-b from-blue-500 to-blue-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200">
         Join Waitlist
       </button>
     </div>
