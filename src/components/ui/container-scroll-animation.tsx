@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
+type SafeAny=any;
 
 export const ContainerScroll = ({
   titleComponent,
@@ -54,7 +55,7 @@ export const ContainerScroll = ({
   );
 };
 
-export const Header = ({ translate, titleComponent }: any) => {
+export const Header = ({ translate, titleComponent }: SafeAny) => {
   return (
     <motion.div
       style={{

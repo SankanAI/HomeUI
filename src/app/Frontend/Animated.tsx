@@ -3,6 +3,7 @@ import React from "react";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import Image from "next/image";
 
+
 export function HeroScrollDemo() {
   return (
     <div className="flex flex-col overflow-hidden">
