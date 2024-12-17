@@ -9,19 +9,28 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { Provider } from '@supabase/supabase-js'
 
+interface UserData {
+  user?: {
+    id: string
+    email?: string
+  }
+}
+
 export default function CreateAccount() {
   const router = useRouter()
   const [error, setError] = useState<string>('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState<string>('')
+  const [password, setPassword] = useState<string>('')
 
-  const setUserCookies = (userData: any) => {
+  const setUserCookies = (userData: UserData) => {
     // Store user ID in a secure, HTTP-only cookie
-    Cookies.set('userId', userData.user?.id, { 
-      expires: 7, // 7 days expiration
-      secure: process.env.NODE_ENV === 'production', // Only secure in production
-      sameSite: 'strict'
-    })
+    if (userData.user?.id) {
+      Cookies.set('userId', userData.user.id, { 
+        expires: 7, // 7 days expiration
+        secure: process.env.NODE_ENV === 'production', // Only secure in production
+        sameSite: 'strict'
+      })
+    }
 
     // Optionally store additional user information
     if (userData.user?.email) {
@@ -33,12 +42,11 @@ export default function CreateAccount() {
     }
   }
 
-
-  useEffect(()=>{
-     if(Cookies.get('userId')){
+  useEffect(() => {
+    if (Cookies.get('userId')) {
       router.push('/')
-     }
-  },[email, password, error, router])
+    }
+  }, [router])
 
   const handleEmailSignIn = async () => {
     // Basic email and password validation
@@ -58,74 +66,19 @@ export default function CreateAccount() {
         return
       }
 
-      // Set cookies upon successful signup
+      // Set cookies upon successful sign-in
       if (data.user) {
-        setUserCookies(data)
+        setUserCookies({ user: data.user })
         console.log(data)
-        // Optional: Create a user profile in Supabase
-        // const { error: profileError } = await supabase
-        //   .from('profiles')
-        //   .upsert({
-        //     id: data.user.id,
-        //     email: data.user.email,
-        //     created_at: new Date().toISOString()
-        //   })
-
-        // if (profileError) {
-        //   console.error('Error creating profile:', profileError)
-        // }
-
-        // Redirect or show success message
         router.push('/')
       }
     } catch (err) {
-      setError('An unexpected error occurred'+err)
+      setError('An unexpected error occurred: ' + String(err))
     }
   }
 
   const handleOAuthSignUp = async (provider: Provider) => {
-    alert("Not Available as of Now"+provider)
-    // try {
-    //   const { data, error } = await supabase.auth.signInWithOAuth({
-    //     provider,
-    //   })
-
-    //   if (error) {
-    //     setError(error.message)
-    //     return
-    //   }
-
-    //   // Supabase OAuth returns a different response structure
-    //   if (data) {
-    //     // OAuth might redirect, so we may not always get user data here
-    //     // You might want to check the session after redirect
-    //     console.log('OAuth Signup Data:', data)
-        
-    //     // Optional: Create a user profile if you have user info
-    //     if (data.user) {
-    //       setUserCookies({ user: data.user })
-          
-    //       const { error: profileError } = await supabase
-    //         .from('profiles')
-    //         .upsert({
-    //           id: data.user.id,
-    //           email: data.user.email,
-    //           created_at: new Date().toISOString()
-    //         })
-
-    //       if (profileError) {
-    //         console.error('Error creating profile:', profileError)
-    //       }
-
-    //       router.push('/dashboard')
-    //     } else {
-    //       // For OAuth, the actual user data might be retrieved after redirect
-    //       router.push('/dashboard')
-    //     }
-    //   }
-    // } catch (err) {
-    //   setError('OAuth signup failed')
-    // }
+    alert(`OAuth Signup not available yet for ${provider}`)
   }
 
   return (
