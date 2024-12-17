@@ -38,7 +38,7 @@ export default function CreateAccount() {
      if(Cookies.get('userId')){
       router.push('/')
      }
-  },[])
+  },[email, password, error, router])
 
   const handleEmailSignIn = async () => {
     // Basic email and password validation
