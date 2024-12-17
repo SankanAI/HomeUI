@@ -47,7 +47,7 @@ export default function ShashankPortfolio() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-4xl">
+    <div className="container mx-auto px-4 py-8 max-w-4xl mt-6">
       <Card className="w-full">
         <CardHeader className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
           <div className="w-32 h-32 bg-blue-100 rounded-full flex items-center justify-center">

@@ -66,7 +66,7 @@ export default function AboutUsSection() {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-6xl">
+    <div className="container mx-auto px-4 py-12 max-w-6xl mt-6">
       <Card className="w-full">
         <CardHeader className="text-center">
           <CardTitle className="text-4xl font-bold text-blue-600 mb-4">
