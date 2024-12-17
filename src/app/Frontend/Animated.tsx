@@ -55,7 +55,7 @@ const CardCollection = () => {
       {cardData.map((card, index) => (
         <Card 
           key={index} 
-          className="w-[300px] flex flex-col items-center p-4 bg-[#192734] border-gray-950"
+          className="w-[300px] bg-[#0A0A0B] flex flex-col items-center p-4 rounded-[3vh] border-gray-950"
         >
           <CardHeader className="flex flex-col items-center text-white">
             <card.icon className="w-12 h-12 mb-4 text-white" />
