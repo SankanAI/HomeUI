@@ -9,7 +9,6 @@ import { Button } from '@/components/ui/button';
 import { 
   CodeXml, 
   Brain, 
-  Headphones, 
   Rocket, 
   Globe,
   SmilePlus,
