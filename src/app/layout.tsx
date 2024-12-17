@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { DM_Sans } from 'next/font/google'; // Import DM Sans font
 import AppAppBar from "./UI/AppAppBar"; // Adjust path as needed
+import Footer from "./UI/Footer"; // Adjust path as needed
 const dmSans = DM_Sans({ subsets: ['latin'], display: 'swap' });
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default function RootLayout({
       <body className={dmSans.className}>
       <AppAppBar />
         {children}
+      <Footer/>
       </body>
     </html>
   );
