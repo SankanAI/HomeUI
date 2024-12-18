@@ -83,7 +83,7 @@ export default function CreateAccount() {
 
   return (
     <div 
-      className="bg-[#0A0A0B] rounded-lg text-white p-4  w-[95%] lg:w-full ml-[2.5%] lg:ml-[0%] lg:w-[30%] lg:ml-[35%] lg:rounded-[3vh] rounded-0 mt-[8vh] py-13"
+      className="bg-[#0A0A0B] rounded-lg text-white p-4  w-[95%] lg:w-[30%] ml-[2.5%] lg:ml-[35%] lg:w-[30%] lg:ml-[35%] lg:rounded-[3vh] rounded-0 mt-[8vh] py-13"
     >
       {/* Create Account Section */}
       <div className="space-y-6 bg-[#111113] rounded-lg p-6 mb-4">
