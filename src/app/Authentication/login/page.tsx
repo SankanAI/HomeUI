@@ -83,12 +83,12 @@ export default function CreateAccount() {
 
   return (
     <div 
-      className="bg-[#0A0A0B] text-white p-4 w-full lg:w-[30%] lg:ml-[35%] lg:rounded-[3vh] rounded-0 mt-[8vh] py-13"
+      className="bg-[#0A0A0B] rounded-lg text-white p-4  w-[95%] lg:w-full ml-[2.5%] lg:ml-[0%] lg:w-[30%] lg:ml-[35%] lg:rounded-[3vh] rounded-0 mt-[8vh] py-13"
     >
       {/* Create Account Section */}
       <div className="space-y-6 bg-[#111113] rounded-lg p-6 mb-4">
         <div className="space-y-2">
-          <h2 className="text-2xl font-semibold">Create an account</h2>
+          <h2 className="text-2xl font-semibold">Login into account</h2>
           <p className="text-gray-400">Enter your email below to create your account</p>
         </div>
 
@@ -175,7 +175,7 @@ export default function CreateAccount() {
           className="w-full bg-purple-600 hover:bg-purple-700"
           onClick={handleEmailSignIn}
         >
-          Create account
+          Login into account
         </Button>
       </div>
     </div>

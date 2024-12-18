@@ -16,7 +16,7 @@ export default function AppAppBar() {
   const menuItems = [
     { label: 'Home', href: '/' },
     { label: 'Twitter', href: 'https://twitter.com/' },
-    { label: 'Meet the Dev', href: '' },
+    { label: 'Meet the Dev', href: '/Company/Meet_Dev' },
     { label: 'Feedback', href: '/UI/FeedbackForm' },
   ];
 

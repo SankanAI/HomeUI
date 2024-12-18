@@ -187,7 +187,7 @@ export default function FeedbackForm() {
   };
 
   return (
-    <Card className="w-full max-w-4xl mx-auto mt-[10vh]">
+    <Card className="mt-[10vh] w-[95%] ml-[2.5%] lg:w-[60%] lg:ml-[20%]">
       <CardHeader>
         <CardTitle>Learning Platform Feedback</CardTitle>
         <CardDescription>
