@@ -23,22 +23,52 @@ export default function CreateAccount() {
   const [password, setPassword] = useState<string>('')
 
   const setUserCookies = (userData: UserData) => {
-    // Store user ID in a secure, HTTP-only cookie
     if (userData.user?.id) {
       Cookies.set('userId', userData.user.id, { 
-        expires: 7, // 7 days expiration
-        secure: process.env.NODE_ENV === 'production', // Only secure in production
+        expires: 7,
+        secure: process.env.NODE_ENV === 'production',
         sameSite: 'strict'
       })
     }
 
-    // Optionally store additional user information
     if (userData.user?.email) {
       Cookies.set('userEmail', userData.user.email, { 
         expires: 7,
         secure: process.env.NODE_ENV === 'production',
         sameSite: 'strict'
       })
+    }
+  }
+
+  const createUserProfile = async (userId: string, userEmail: string) => {
+    try {
+      // First check if profile already exists
+      const { data: existingProfile } = await supabase
+        .from('profiles')
+        .select('id')
+        .eq('id', userId)
+        .single()
+
+      if (!existingProfile) {
+        // Create new profile only if one doesn't exist
+        const { error: profileError } = await supabase
+          .from('profiles')
+          .insert([
+            {
+              id: userId,
+              email: userEmail,
+              created_at: new Date().toISOString()
+            }
+          ])
+
+        if (profileError) {
+          console.error('Error creating profile:', profileError)
+          throw profileError
+        }
+      }
+    } catch (err) {
+      console.error('Error in profile creation:', err)
+      throw err
     }
   }
 
@@ -49,7 +79,6 @@ export default function CreateAccount() {
   }, [router])
 
   const handleEmailSignIn = async () => {
-    // Basic email and password validation
     if (!email || !password) {
       setError('Email and password are required')
       return
@@ -66,10 +95,11 @@ export default function CreateAccount() {
         return
       }
 
-      // Set cookies upon successful sign-in
       if (data.user) {
+        // Create profile before setting cookies and redirecting
+        await createUserProfile(data.user.id, data.user.email || '')
+        
         setUserCookies({ user: data.user })
-        console.log(data)
         router.push('/')
       }
     } catch (err) {
