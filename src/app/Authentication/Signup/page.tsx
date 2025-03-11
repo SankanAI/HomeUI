@@ -69,7 +69,7 @@ export default function Signup() {
       if (data.user) {
         showToast('Verification Email Sent', 'Please check your email to verify your account')
         // Optionally redirect to a verification pending page
-        router.push('/Authentication/login')
+        setTimeout(()=>{router.push('/Authentication/login')}, 3000)
       }
     } catch (err) {
       console.error('Unexpected error during sign-up:', err)

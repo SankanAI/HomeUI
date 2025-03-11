@@ -41,8 +41,8 @@ export default function ShashankPortfolio() {
   ];
 
   const educationDetails = {
-    college: "KLE Technological University (KLS GIT)",
-    degree: "Bachelor of Engineering in Computer Science",
+    college: "KLS Gogte Institute of Technology, Belagavi (KLS GIT)",
+    degree: "Bachelor of Engineering in Electronics and Communciation",
     graduationYear: 2022
   };
 
@@ -133,12 +133,12 @@ export default function ShashankPortfolio() {
               </DialogTrigger>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>Lets Collaborate!</DialogTitle>
+                  <DialogTitle className="text-black">Lets Collaborate!</DialogTitle>
                   <DialogDescription>
                     Interested in building something impactful? Reach out and lets discuss your ideas.
                   </DialogDescription>
                 </DialogHeader>
-                <div className="grid gap-4 py-4 text-black">
+                <div className="grid gap-4 py-2 text-white text-center text-md bg-black rounded-md">
                     Message me on Twitter
                 </div>
               </DialogContent>

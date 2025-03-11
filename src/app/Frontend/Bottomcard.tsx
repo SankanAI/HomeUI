@@ -12,7 +12,7 @@ import Sankan from '/public/Sankan.svg';
 
 export default function Bottomcard(){
     return <>
-       <Card className="bg-black w-full lg:w-[400px]">
+       <Card className="bg-black w-full lg:w-[500px]">
             <CardHeader>
                 <CardTitle>Card Title</CardTitle>
             </CardHeader>
@@ -31,7 +31,7 @@ export default function Bottomcard(){
                                 <Landmark className="text-3xl"/> 
                             </div>
 
-                            <div className="w-[50px] h-[50px] lg:w-[50px] lg:w-[50px] p-2.5 rounded-full text-white border-[0.2vh] lg:border-[0.5vh] inline-flex ml-2 lg:ml-5 ">
+                            <div className="w-[50px] h-[50px] lg:w-[50px] lg:w-[50px] p-2.5 rounded-full text-white border-[0.2vh] lg:border-[0.5vh] inline-flex ml-1 lg:ml-5 ">
                                 <Rocket className="text-3xl"/> 
                             </div>
 

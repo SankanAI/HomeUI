@@ -325,7 +325,7 @@ export default function FeedbackForm() {
         <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
           <DialogContent>
             <DialogHeader>
-              <DialogTitle>Feedback Submission</DialogTitle>
+              <DialogTitle className='text-black'>Feedback Submission</DialogTitle>
               <DialogDescription>
                 {dialogMessage}
               </DialogDescription>
