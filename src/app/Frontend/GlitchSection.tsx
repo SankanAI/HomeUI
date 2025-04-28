@@ -27,7 +27,7 @@ const GlitchSection = () => {
         <div className="order-2 md:order-1">
           <DescriptionComponent />
         </div>
-        <div className="order-1 md:order-2  lg:w-[430px]">
+        <div className="order-1 md:order-2  lg:w-full">
           <div className="p-3 bg-white rounded-md">
             <Bottomcard/>
           </div>

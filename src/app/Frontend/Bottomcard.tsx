@@ -12,7 +12,7 @@ import Sankan from '/public/Sankan.svg';
 
 export default function Bottomcard(){
     return <>
-       <Card className="bg-black w-full lg:w-[500px]">
+       <Card className="bg-black w-full lg:w-full">
             <CardHeader>
                 <CardTitle>Card Title</CardTitle>
             </CardHeader>
